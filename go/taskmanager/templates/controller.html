@@ -1,0 +1,74 @@
+{{define "controller"}} 
+	
+	<div class=" colum" style="border-style: outset;border-width: 1px">
+            		<div class="ui vertical menu"  id="vertMenu" style="width: 20rem !important;">
+                 
+                  <div class="item">
+                    <h3 class="ui header">TASKS</h3><hr/>
+                    
+            					  <a class="item" onclick="getTasks()">
+            					  <h6 class="ui header">Get all tasks</h6>
+            					   <p>Check out our new promotions</p>
+            					  </a>
+            					  <a class="item" onclick="getTaskByUser()">
+            					    <h6 class="ui header">Get task by USER</h6>
+            					    <p>Check out our collection of coupons</p>
+            					  </a>
+            					  <a class="item" onclick="createTask()">
+            					    <h6 class="ui header">Create task</h6>
+            					    <p>Visit our rebate forum for information on claiming rebates</p>
+            					  </a>
+                         <a class="item" onclick="updateTask()">
+                          <h6 class="ui header">Update task</h6>
+                          <p>Visit our rebate forum for information on claiming rebates</p>
+                        </a>
+                        <a class="item" onclick="getTasksByID()">
+                          <h6 class="ui header">Get task by ID</h6>
+                         <!--  <form method="get" action="your controller here!">
+                          <input id="myinput" type="hidden" value="xxx" name="myname" />
+                             <submit type="submit"/> 
+                          </form> -->
+                          <p>Visit our rebate forum for information on claiming rebates</p>
+                        </a>
+                        <a class="item" onclick="deleteTaskByID()">
+                          <h6 class="ui header">Delete task</h6>
+                          <p>Visit our rebate forum for information on claiming rebates</p>
+                        </a>
+                   
+					        </div>
+
+
+                      <div class="item">
+                          <h3 class="ui header">NOTES</h3><hr/>
+                      
+                          <a class="item" onclick="getTaskNotes()">
+                          <h6 class="ui header">Get all notes</h6>
+                           <p>Check out our new promotions</p>
+                          </a>
+                          <a class="item" onclick="getNotesByTaskID()">
+                            <h6 class="ui header">Get note by TaskID</h6>
+                            <p>Check out our collection of coupons</p>
+                          </a>
+                          <a class="item" onclick="createNote()">
+                            <h6 class="ui header">Create note</h6>
+                            <p>Visit our rebate forum for information on claiming rebates</p>
+                          </a>
+                           <a class="item" onclick="updateNote()">
+                            <h6 class="ui header">Update note</h6>
+                            <p>Visit our rebate forum for information on claiming rebates</p>
+                          </a>
+                          <a class="item" onclick="getNoteByID()">
+                            <h6 class="ui header">Get note by ID</h6>
+                            <p>Visit our rebate forum for information on claiming rebates</p>
+                          </a>
+                          <a class="item" onclick="deleteNoteByID()">
+                            <h6 class="ui header">Delete note</h6>
+                            <p>Visit our rebate forum for information on claiming rebates</p>
+                          </a>
+                      </div>
+
+
+            	  </div>
+              </div>
+            		
+{{end}}
