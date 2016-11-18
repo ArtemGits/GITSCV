@@ -1,0 +1,45 @@
+{{define "bio"}}
+{{template "Index"}}
+<div id="wrapper" style="margin: 1em 3.5em 0 3.5em">
+    <!-- Slideshow 1 -->
+    <ul class="rslides" id="slider1">
+        <li><img src="/static/images/allthewineband3.jpg" alt=""></li>
+        <li><img src="/static/images/allthewineband4.jpg" alt=""></li>
+        <li><img src="/static/images/allthewineband5.jpg" alt=""></li>
+        <li><img src="/static/images/allthewinelights.jpg" alt=""></li>
+        <li><img src="/static/images/allthewinedrums.jpg" alt=""></li>
+    </ul>
+
+</div>
+<script>
+
+    $(function () {
+        // Slideshow 1
+        $("#slider1").responsiveSlides({
+            maxwidth: 800,
+            speed: 800
+        });
+
+
+    });
+
+</script>
+<div class="divider" style="margin: 0 5em 0 5em"></div>
+<div class="ui container center aligned" style="font-size: 25px;">
+    <p>
+        Hailing from the musty basements of Chicago,
+        All the Wine is an indie rock band pouring out
+        an electrifying blend of melodic rock 'n' roll
+        and spirited punk.
+        </br></br>
+        The trio released their second EP,
+        "Heavy Lights," on Sept. 8, 2015. Prior to "Time & Direction,"
+        they released the debut EP "Summer Parade" in December 2014.
+        </br></br>
+        Recalling tribulations of lost opportunities and disillusioned love,
+        "Summer Parade" introduces listeners to a narrative struggle
+        to understand and accept the loss of love and promises broken
+        by the simple and unavoidable reality of growth.
+    </p>
+</div>
+{{end}}

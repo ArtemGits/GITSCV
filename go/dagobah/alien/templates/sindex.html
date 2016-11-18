@@ -1,0 +1,66 @@
+{{define "Index"}}
+<html>
+    <head>
+        <title>| All the Wine |</title>
+        <link rel="shortcut icon" href="/static/images/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+
+        <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+
+
+
+        <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1">
+    </head>
+
+<body>
+
+
+
+<div id="marginWrapper" style="margin: 0 3.5em 0 3.5em">
+
+    <div id="header" class="ui header" ><a href="/"/>ALL THE WINE</a></div>
+
+    <div id="navbar" class="ui compact menu item seven inverted stackable">
+        <a class="item" href="/">home</a>
+        <a class="item" href="music">music</a>
+        <a class="item" href="video">video</a>
+        <a class="item" href="bio">bio</a>
+        <a class="item" href="shows">shows</a>
+        <a class="item" target="_blank" href="http://allthewine.storenvy.com/">store</a>
+        <a class="item" href="contact">contact</a>
+    </div>
+
+
+
+
+    <div id="homeCTA" class="ui two column left aligned  grid">
+        <div class="column inverted" style="margin-top: 12px; font-family: AvenirNextMediumCn;">
+            <h3>JOIN OUR MAILING LIST!</h3>
+            <div class="ui large action left corner labeled input">
+                <input id="inputIcon" type="text" placeholder="Enter email address..." style="border-radius: 0px; font-family: AvenirNextIt;">
+                <div class="ui left corner label" >
+                    <i class="mail icon"></i>
+                </div>
+                <button class="ui button" style="border-radius: 0px;">JOIN</button>
+            </div>
+        </div>
+        <div class="column">
+            <div id="socialIcons">
+                <a target="_blank" href="https://www.instagram.com/allthewinemusic"><i class="instagram square icon huge"></i></a>
+                <a target="_blank" href="https://www.facebook.com/allthewinemusic/"><i class="facebook square icon huge"></i></a>
+                <a target="_blank" href="https://twitter.com/allthewinemusic"><i class="twitter icon huge"></i></a>
+                <a target="_blank" href="https://www.youtube.com/channel/UCKK_Lc5Rn1i4NJImlTMkuvA"><i class="youtube square icon huge"></i></a>
+                <a target="_blank" href="https://play.spotify.com/artist/7thiTYKwi16Su7xHnlKguN"><i class="spotify icon huge"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/js/responsiveslides.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+<script src="/static/js/scripts.js"></script>
+
+    {{end}}

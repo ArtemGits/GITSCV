@@ -1,0 +1,55 @@
+{{define "bio"}}
+{{template "Index"}}
+	<div id="wrapper" style="margin : 1em 3.5em 0 3.5em">
+	<div id="wrapper" class="ui container grid center algined">
+
+				<div class="rslides_container">
+					<ui class="rslides" id="slider1">
+						<li><a href="#" target="_blank"><img src="/static/images/Dagobah_ep3.jpg" title="click to open new tab" ></a></li>
+
+						 <li><a href="#" target="_blank"><img src="/static/images/dagobah-bio-6_62f469f1.jpeg" title="click to open new tab" ></a></li>
+	                    <li><a href="#" target="_blank"><img src="/static/images/Dark_Side_Cave_TFUII.png" title="click to open new tab" ></a></li>
+	                    <li><a href="#" target="_blank"><img src="/static/images/sw_lgi_gallery_10-1280x720.jpg" title="click to open new tab" ></a></li>
+	                    <li><a href="#" target="_blank"><img src="/static/images/Dragonsnake_Bog.jpg" title="click to open new tab" ></a></li>
+	                     <li><a href="#" target="_blank"><img src="/static/images/dagobah_by_foxinshadow-d7uorh1.png" title="click to open new tab" ></a></li>
+	                </ul>
+            	</div>
+    </div>
+
+
+<script>
+	$(function() {
+		$("#slider1").responsiveSlides({
+			auto: false,
+			pager: true,
+			nav : true,
+			speed: 500,
+			maxwidth : 1400,
+			namespace: "centered-btns"
+		});
+	});
+</script>
+
+
+
+		
+		<div class="ui container center aligned" style="font-size: 25px">
+			<p>
+		        Dagobah was a planet in the Dagobah system, and one of the purest places in the galaxy within the Force. A remote world of swamps and forests, it served as a refuge for Jedi Grand Master Yoda during his exile after the destruction of the Jedi Order. It was here that Luke Skywalker received advanced training in the ways of the Force under Jedi Master Yoda and would later witness his death and transformation into the Force.
+   			 </p>
+		</div>
+
+            
+       
+</div>
+       
+		 <div  id ="footerContainer" class=container-fluid style="background-color:#000000;">
+		        <footer class="container-fluid text-center">
+
+          
+          <p style = "text-align: center; margin-top: 25px; font-size: 2em; color:white;" >DAGOBAH Made By 
+          <a href="#" title="Visit agits home page">www.agits.com</a></p>
+        </footer>
+        </div>
+
+{{end}}
