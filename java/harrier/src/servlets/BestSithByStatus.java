@@ -1,8 +1,8 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Achieve;
-import controllers.model.Sith;
+import controllers.model.Achievements;
+import controllers.model.Siths;
 import controllers.model.Status;
 
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class BestSithByStatus extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-    	List<Map<Sith, List<Achieve>>> allAchieveBySith = Connections.getFactory().getSithDao().getBestSithByStatus();
+    	List<Map<Siths, List<Achievements>>> allAchieveBySith = Connections.getFactory().getSithDao().getBestSithByStatus();
     	request.setAttribute("BestSithByStatus",allAchieveBySith);
         for( int i=0; i<allAchieveBySith.size(); i++) {
         	System.out.println(allAchieveBySith.get(i).keySet());

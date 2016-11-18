@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-@WebServlet(name = "login", urlPatterns = "/login")
+@WebServlet(name = "login", urlPatterns = "/jsp/login")
 public class Login extends HttpServlet {
 	private final Logger logger = Logger.getLogger(Login.class);
 	private static final long serialVersionUID = 1L;
@@ -48,9 +48,9 @@ public class Login extends HttpServlet {
 		  if(loginUser.isValid()) {
 			 	HttpSession session = request.getSession();
 				session.setAttribute("currentsession", email);
-				request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request, response);
+				request.getRequestDispatcher("/jsp/usersMain.jsp").forward(request, response);
 			} else {
-				response.sendRedirect("failure.html");
+				response.sendRedirect("failure.jsp");
 			}
 		 
 		 

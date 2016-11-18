@@ -99,7 +99,7 @@
     </form>
 
     <div class="ui message">
-      New to us? <a href="register.html">Sign Up</a>
+      New to us? <a href="signup.jsp">Sign Up</a>
     </div>
   </div>
 </div>

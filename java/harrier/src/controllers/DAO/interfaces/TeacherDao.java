@@ -2,6 +2,7 @@ package controllers.DAO.interfaces;
 
 
 
+
 import controllers.model.Teacher;
 
 import java.util.List;
@@ -10,11 +11,11 @@ import java.util.List;
 
 
 public interface TeacherDao {
-    /**
-     * Return list of instances with authors
-     * @return list of instances
-     */
-    List<Teacher > getAll();
-    public List<Teacher> getInstanceByName(String name, int status); 
+    
+	public List<Teacher > getAll();
+    public Teacher getTeacher(int id);
+    public boolean updateTeacher(int id, int stage);
+    public boolean createTeacher(Teacher teacher);
+    public boolean deleteTeacher(int id); 
 
 }

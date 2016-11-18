@@ -1,92 +1,136 @@
 package controllers.DAO.postgresql;
 
-import controllers.Connections;
+
+import controllers.Hibernate;
 import controllers.DAO.interfaces.TeacherDao;
 
-import controllers.model.Sith;
 
 import controllers.model.Teacher;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
+
 
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.*;
 
-/**
- * Created by igor on 21.04.16.
- */
 
-/**
- * Class for working with DB table Instance
- * @author igor
- */
+
+ 
 
 public class PostgreTeacherDao implements TeacherDao {
 
     private static final Logger logger = Logger.getLogger(PostgreTeacherDao.class);
-
+    private Session session;
+   
 	
 
-    /**
-     * Return list of instances with authors
-     * @return list of instances
-     */
-    @Override
+   
+    @SuppressWarnings("unchecked")
+	@Override
     public List<Teacher> getAll() {
-        return getInstanceByName(null,0);
-    }
-
-    /**
-     * Get Instance by name of book
-     * @param name book name
-     * @param status book status=1 if exist in library, else 0
-     * @return list of instances
-     */
-    @Override
-    public List<Teacher> getInstanceByName(String name, int status) {
-        String additional;
-//        if(name == null) {
-//            additional="";
-//        } else {
-//            additional = "and name_b = '"+ name +"' ";
-//        }
-//        if(status==1) {
-//            additional+= "and status =1";
-//        }
-
-        List<Teacher> teachers = new ArrayList<>();
-
+    	session = Hibernate.openSession();
+    	List<Teacher> teachers = new ArrayList<>();
+    	Query query = session.createQuery("select t from Teacher t ");
+		teachers = query.list();
+		session.close();
         
-        logger.debug("getInstanceByName get list of teacher");
-        try(final Connection connection = PostgreDAOFactory.getConnection();
-            final Statement statement = connection.createStatement();
-            final ResultSet rs = statement.executeQuery(
-                    "SELECT * from teacher")) {
-            while (rs.next()) {
-                teachers.add(new Teacher(rs.getInt("id"),
-                        rs.getString("old_name"),
-                        rs.getString("new_name"),
-                        rs.getString("home")));
-            }
-        } catch (SQLException e) {
-            logger.error("SQLException getInstacesByName", e);
-        }
-        //if no instances
-        if(teachers.isEmpty()) {
-            return new ArrayList<>();
-        }
+        
+       return teachers;
 
-                return teachers;
     }
 
+
+
+
+	@Override
+	public Teacher getTeacher(int id) {
+		session = Hibernate.openSession();
+		Teacher teacher = null;
+
+		Query query = session.createQuery("select t from Teacher t where id=:id ");
+		query.setParameter("id",id);
+		teacher = (Teacher) query.uniqueResult();
+		session.close();
+        
+                return teacher;
+	}
+
+
+
+
+	@Override
+	public boolean updateTeacher(int id, int sith_id) {
+		session = Hibernate.openSession();
+		boolean flag = false;
+		Transaction t = null;
+		try {
+		t = session.beginTransaction();
+		Query query = session.createQuery("update Teacher set sith_id=:sith_id WHERE id=:id");
+		query.setParameter("id", id);
+		query.setParameter("sith_id", sith_id);
+		query.executeUpdate();
+		t.commit();
+		flag = true;
+		} catch (HibernateException e) {
+		e.printStackTrace();
+		t.rollback();
+		}
+		session.close();
+		return flag;
+	}
+
+
+
+
+	@Override
+	public boolean createTeacher(Teacher teacher) {
+		session = Hibernate.openSession(); 
+		boolean flag = false;
+		Transaction t = null;
+		try {
+		t = session.beginTransaction();
+		session.saveOrUpdate(teacher);
+		t.commit();
+		flag = true;
+		} catch (HibernateException e) {
+		e.printStackTrace();
+		t.rollback();
+		}
+		session.close();
+		return flag;
+	}
+
+
+
+
+	@Override
+	public boolean deleteTeacher(int id) {
+		session = Hibernate.openSession();
+		boolean flag = false;
+		Transaction t = null;
+		try {
+		t = session.beginTransaction();
+		Query query = session.createQuery("delete Teacher where id=:id");
+		query.setParameter("id", id);
+		 query.executeUpdate();
+		t.commit();
+		flag = true;
+		} catch (HibernateException e) {
+		e.printStackTrace();
+		t.rollback();
+		}
+		session.close();
+		return flag;
+	}
+
+   
+    
+    
 
 	
 }

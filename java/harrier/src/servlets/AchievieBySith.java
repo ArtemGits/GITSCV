@@ -1,8 +1,8 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Achieve;
-import controllers.model.Sith;
+import controllers.model.Achievements;
+import controllers.model.Siths;
 import controllers.model.Status;
 
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class AchievieBySith extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("HELO");
-		List<Map<Sith, List<Achieve>>> allAchieveBySith = Connections.getFactory().getSithDao().getAchieveBySith(request.getParameter("aname"));
+		List<Map<Siths, List<Achievements>>> allAchieveBySith = Connections.getFactory().getSithDao().getAchieveBySith(request.getParameter("aname"));
     	request.setAttribute("AchieveBySith",allAchieveBySith);
         for( int i=0; i<allAchieveBySith.size(); i++) {
         	System.out.println(allAchieveBySith.get(i).keySet());

@@ -1,11 +1,18 @@
 package controllers.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 
-
-
+@Entity
+@Table(name=("status"))
 public class Status {
+	@Id
+	@Column(name=("id"))
     private final int id;
+	@Column(name=("status"))
     private final String status;
 
     public Status() {
@@ -55,8 +62,8 @@ public class Status {
     @Override
     public String toString() {
         return "Status{" +
-                "id=" + id +
-                ", status='" + status + '\'' + "\n"+
+                "id='" + id +
+                "', status='" + status + '\'' + "\n"+
                 '}';
     }
 }

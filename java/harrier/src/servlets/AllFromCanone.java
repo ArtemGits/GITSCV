@@ -1,7 +1,7 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Sith;
+import controllers.model.Siths;
 import controllers.model.Teacher;
 
 import javax.servlet.ServletException;
@@ -27,7 +27,7 @@ public class AllFromCanone extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        
-    	List<Sith> allSiths = Connections.getFactory().getSithDao().getAllFromCanone();
+    	List<Siths> allSiths = Connections.getFactory().getSithDao().getAllFromCanone();
     	request.setAttribute("AllSithsFromCanone",allSiths);
         System.out.println(allSiths);
         request.getRequestDispatcher("jsp/all_siths_from_canone.jsp").forward(request, response);

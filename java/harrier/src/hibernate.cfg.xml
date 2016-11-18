@@ -17,7 +17,7 @@
 <!-- JDBC connection pool (use the built-in) -->
 
 
-<property name="connection.pool_size">1</property>
+<property name="connection.pool_size">15</property>
 
 <!-- SQL dialect -->
 
@@ -37,13 +37,17 @@
 <!-- Drop and re-create the database schema on startup -->
 
 
-<property name="hbm2ddl.auto">create</property>
+<property name="hbm2ddl.auto">update</property>
 
 <!-- Names the annotated entity class -->
 
 
 <mapping class="controllers.model.User"/>
-
+<mapping class="controllers.model.Student"/>
+<mapping class="controllers.model.Achievements"/>
+<mapping class="controllers.model.Status"/>
+<mapping class="controllers.model.Teacher"/>
+<mapping class="controllers.model.Siths"/>
 <!--<mapping class="items.Items"/>  -->
         
     </session-factory>

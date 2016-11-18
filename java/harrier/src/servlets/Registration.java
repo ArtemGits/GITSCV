@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 import controllers.DAO.postgresql.*;
 import controllers.DAO.interfaces.*;
 
-@WebServlet(name = "register_user", urlPatterns = "/register_user")
+@WebServlet(name = "register_user", urlPatterns = "/jsp/register_user")
 public class Registration extends HttpServlet {
 	
 	private final Logger logger = Logger.getLogger(Registration.class);
@@ -80,11 +80,11 @@ public class Registration extends HttpServlet {
         if(userFactory.UserIsValid()) {
 	    	HttpSession session = request.getSession();
 	    	session.setAttribute("currentsession",userFactory.getUser());
-	    	request.getRequestDispatcher("success.html").forward(request,response);
+	    	request.getRequestDispatcher("success.jsp").forward(request,response);
 	    } else {
 	    	HttpSession session = request.getSession();
 	    	session.setAttribute("currentsession", userFactory.getUser());
-            request.getRequestDispatcher("ind_error.html").forward(request,response);
+            request.getRequestDispatcher("failure.jsp").forward(request,response);
 
 	    }
         

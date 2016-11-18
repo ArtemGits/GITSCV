@@ -1,58 +1,44 @@
 package controllers.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-
+@Entity
+@Table(name=("teacher"))
 public class Teacher {
+	@Id
+	@Column(name=("id"))
     private final int id;
-    private  String old_name;
-    private  String new_name;
-    private  String home;
-    private  int age;
+	
+	@Column(name=("sith_id"))
+    private final int sith_id;
+   
     
     public Teacher() {
         this.id = -1;
-        this.old_name = "";
-        this.new_name = "";
-        this.home="";
-        this.age=0;
+        this.sith_id = -1;
     }
 
-    public Teacher(int id, String old_name, String new_name, String home) {
+    public Teacher(int id,int stage) {
         this.id = id;
-        this.old_name = old_name;
-        this.new_name = new_name;
-        this.home = home;
+       this.sith_id = stage;
        
     }
 
     public int getId() {
         return id;
     }
-
-
-    public String getNew_name() {
-        return new_name;
+    
+    public int getSith_id() {
+        return sith_id;
     }
 
-    public String getOld_name() {
-        return old_name;
-    }
 
-    public String getHome() {
-        return home;
-    }
+   
 
     
-    public void setOld_name(String old_name) {
-        this.old_name = old_name;
-    }
-    public void setNew_name(String new_name) {
-        this.new_name = new_name;
-    }
-
-    public void setHome(String home) {
-        this.home = home;
-    }
+   
 
 
     @Override
@@ -63,9 +49,7 @@ public class Teacher {
         Teacher Teacher = (Teacher) o;
 
         if (id != Teacher.id) return false;
-        if (new_name != Teacher.new_name) return false;
-        if (old_name != Teacher.old_name) return false;
-        if (home != Teacher.home) return false;
+        if(sith_id != Teacher.sith_id) return false;
 		return false;
         
     }
@@ -73,19 +57,15 @@ public class Teacher {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (new_name != null ? new_name.hashCode() : 0);
-        result = 31 * result + (old_name != null ? old_name.hashCode() : 0);
-        result = 31 * result + (home != null ? home.hashCode() : 0);
+        result = result * 31 + sith_id;
         return result;
     }
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "id=" + id +
-                ", new_name=" + new_name +
-                ", old_name='" + old_name + '\'' +
-                ", home='" + home + '\'' + "\n"+
+                "id='" + id + "'" +
+                "sith_id='" + sith_id + "'" +
                 '}';
     }
 }

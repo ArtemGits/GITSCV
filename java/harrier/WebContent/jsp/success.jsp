@@ -65,7 +65,7 @@
 	<div class="ui stacked segment"style="margin:1em 3em 1em 3em;">
 	
 	<p>Use your email and Password to Login</p><br/>
-	<button type="button" onClick="location.href='login.html'" class="ui button">Login Form</button>
+	<button type="button" onClick="location.href='login.jsp'" class="ui button">Login Form</button>
 	</div>
 </div>
    

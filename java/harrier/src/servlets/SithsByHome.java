@@ -1,7 +1,7 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Sith;
+import controllers.model.Siths;
 
 
 import javax.servlet.ServletException;
@@ -25,7 +25,7 @@ public class SithsByHome extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-    	List<Sith> allSithsByHome = Connections.getFactory().getSithDao().getInstanceByHome(request.getParameter("home"));
+    	List<Siths> allSithsByHome = Connections.getFactory().getSithDao().getInstanceByHome(request.getParameter("home"));
     	request.setAttribute("SithsByHome",allSithsByHome);
         System.out.println(allSithsByHome);
         request.getRequestDispatcher("jsp/all_siths_by_home.jsp").forward(request, response);

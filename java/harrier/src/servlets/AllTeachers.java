@@ -1,7 +1,7 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Sith;
+import controllers.model.Siths;
 import controllers.model.Teacher;
 
 import javax.servlet.ServletException;

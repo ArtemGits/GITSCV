@@ -1,7 +1,7 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Sith;
+import controllers.model.Siths;
 
 
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class SithsByRang extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Sith> allSithsByRang = Connections.getFactory().getSithDao().getSithsByRang(request.getParameter("rang"));
+		List<Siths> allSithsByRang = Connections.getFactory().getSithDao().getSithsByRang(request.getParameter("rang"));
     	request.setAttribute("SithsByRang",allSithsByRang);
         System.out.println(allSithsByRang);
         request.getRequestDispatcher("jsp/all_siths_by_rang.jsp").forward(request, response);

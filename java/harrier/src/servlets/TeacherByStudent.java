@@ -1,7 +1,7 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Sith;
+import controllers.model.Siths;
 
 
 import javax.servlet.ServletException;
@@ -25,7 +25,7 @@ public class TeacherByStudent extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-    	List<Sith> allTeacherByStudent = Connections.getFactory().getSithDao().getTeacherByStudentName(request.getParameter("sname"));
+    	List<Siths> allTeacherByStudent = Connections.getFactory().getSithDao().getTeacherByStudentName(request.getParameter("sname"));
     	request.setAttribute("TeacherByStudent",allTeacherByStudent);
         System.out.println(allTeacherByStudent);
         request.getRequestDispatcher("jsp/all_teacher_by_student.jsp").forward(request, response);

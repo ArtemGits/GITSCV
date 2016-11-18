@@ -53,6 +53,10 @@ ol, ul {
 	padding:0.7em;
 }
 
+#userController {
+	margin-top:3.3em;
+}
+
 blockquote, q {
   quotes: none;
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-  <jsp:useBean id="AchieveBySith" scope="request" type="java.util.List<controllers.model.Sith>"/> 
+  <jsp:useBean id="AchieveBySith" scope="request" type="java.util.List<controllers.model.Siths>"/> 
 
 
 <c:import url="fragments\headTable.jsp" />

@@ -1,7 +1,7 @@
 package servlets;
 
 import controllers.Connections;
-import controllers.model.Sith;
+import controllers.model.Siths;
 import controllers.model.Status;
 
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class SithsByStatus extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Map<Status, List<Sith>>> allSithsByStatus = Connections.getFactory().getSithDao().getSithsByStatus(request.getParameter("status"));
+		List<Map<Status, List<Siths>>> allSithsByStatus = Connections.getFactory().getSithDao().getSithsByStatus(request.getParameter("status"));
     	request.setAttribute("SithsByStatus",allSithsByStatus);
 //        for( int i=0; i<allSithsByStatus.size(); i++) {
 //        	System.out.println(allSithsByStatus.get(i).keySet().);
