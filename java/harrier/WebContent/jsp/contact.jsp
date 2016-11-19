@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%String Message = (String)request.getAttribute("Message"); %>
 
 	
 	
@@ -79,35 +80,58 @@
   
   
   </div>
-<div class="ui text container" style="margin-top:1.5em;">
-<form action="index.html" >
-    <fieldset class="contact-inner">
-      <p class="contact-input">
-        <input type="text" name="name" placeholder="Your Name…" autofocus>
-      </p>
-
-      <p class="contact-input">
-        <label for="select" class="select">
-          <select name="subject" id="select">
-            <option value="" selected>Choose Subject…</option>
-            <option value="1">I have a suggestion</option>
-            <option value="1">I found a bug</option>
-            <option value="1">Other</option>
-          </select>
-        </label>
-      </p>
-
-      <p class="contact-input">
-        <textarea name="message" placeholder="Your Message…"></textarea>
-      </p>
-
-      <p class="contact-submit">
-        <input type="submit" value="Send Message">
-      </p>
-    </fieldset>
-  </form>
- 
-
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h3 class="ui  image header" style="margin-top:1em;color:#ffffff;">
+     Contact with us
+    </h3>
+				
+					<form class="ui large form"   method="post" action="send_email">
+					 <div class="ui text container" style="margin:1em 3em 1em 3em; background-color:#fff;'">
+					
+					<div class="field" style="margin-top:1em;"> Name
+						<input type="text" id="pp-name" name="name"
+							placeholder="enter your name here" title="Please enter your name"
+							 aria-required="true" required style="margin-left:1em;">
+							 
+					
+					</div>
+					
+					<div class="field" style="margin-top:1em;"> E-mail
+						<input type="text"  name="email"
+							placeholder="enter your email address here"
+							title="Please enter your email address" 
+							aria-required="true" required style="margin-left:1em;">
+					</div>
+					
+					<div class="field" style="margin-top:1em;">Phone
+						<input type="text"  name="phone"
+							placeholder="enter your phone number here"
+							title="Please enter your phone number" 
+							aria-required="true" required style="margin-left:1em;">
+					</div>
+					
+					<div class="field" style="margin-top:1em;">
+						<textarea  name="message"
+							placeholder="enter your message here" style="margin-left:1em;"></textarea>
+					</div>
+					<div>
+					
+						<%
+						if(null != Message) {
+							out.println(Message);
+						}
+						
+						%>
+					</div>
+					<input type="submit" name="submit" value="Send Message" style="margin-top:1em;">
+				</div>	
+				</form>
+					
+				
+				
+				 
+	</div>
 </div>
  
 	

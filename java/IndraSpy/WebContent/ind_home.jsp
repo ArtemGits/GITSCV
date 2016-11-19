@@ -30,11 +30,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="ind_index.html" ><img src ="pictures/jedi-order-symbol-cellphone-swmand4.png"></a>
+      <a class="navbar-brand" href="ind_index.jsp" ><img src ="pictures/jedi-order-symbol-cellphone-swmand4.png"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="ind_index.html">ABOUT</a></li>
+        <li><a href="ind_index.jsp">ABOUT</a></li>
         <li><a href="ind_login.html">LOGIN</a></li>
          <li><a href="ind_register.html">REGISTER</a></li>
       </ul>
@@ -59,7 +59,7 @@
 				<div class="col-sm-4" style="background-color:red;">
 					<div>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="ind_index.html" style="color:white; font-size:14px;">Log Out</a></li>
+							<li><a href="ind_index.jsp" style="color:white; font-size:14px;">Log Out</a></li>
 						</ul>
 					</div>
 				</div>
